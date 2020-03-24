@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
-import { enableScreens } from 'react-native-screens';
+import * as Font from 'expo-font';
+//import { enableScreens } from 'react-native-screens';
 
 import MealsNavigator from './navigation/MealsNavigator';
+import CategoriesScreen from './screens/CategoriesScreen';
 
-enableScreens();
+//enableScreens();
 
 const fetchFonts = () => {
   Font.loadAsync({
@@ -26,16 +26,7 @@ export default function App() {
         onError={err => console.error(err)}
       />
     );
-  } else {
-    return <MealsNavigator />;
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+  return <CategoriesScreen />;
+}
